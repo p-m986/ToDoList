@@ -1,0 +1,353 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+.padding-small{
+    padding: 0.2em;
+}
+.padding-med{
+    padding: 0.5em;
+}
+.padding-large{
+    padding: 10px;
+}
+.disflex{
+    display: flex;
+}
+.disgrid{
+    display: grid;
+}
+.font-SizeBig{
+    font-size: calc(3em + 0.390625vw);
+}
+.font-SizeMed{
+    font-size: calc(2em + 0.390625vw);
+}
+.font-SizeSml{
+    font-size: calc(1em + 0.390625vw);
+}
+.font-ColTest{
+    color: lightcoral;
+    letter-spacing: calc(1vw * 0.12);
+
+}
+.font-ColWhite{
+    color: rgb(247, 180, 247);
+}
+.font-ColBlack{
+    color: #24d869;
+}
+.font-ColRed{
+    color: red;
+}
+.font-ColPink{
+    color: magenta;
+}
+.Vcenter{
+    align-items: center;
+    justify-content: center;
+}
+.backColGreen{
+    background-color: rgb(234, 255, 255);
+}
+.backCol{
+    background-color:rgba(255, 255, 255, 0.765);
+}
+.stroke
+{
+    text-shadow:
+    -0.5px -0.5px 0 rgb(200, 174, 222),
+    0.5px -0.5px 0 rgb(200, 174, 222),
+    -0.5px 0.5px 0 rgb(200, 174, 222),
+    0.5px 0.5px 0 rgb(200, 174, 222);  
+}
+.wiggle{
+    animation: wiggle 2s linear;  
+}
+
+/* -------------------------------------------------------- */
+
+#Info{
+    position: absolute;
+    z-index: 4;
+    margin: 5px;
+    height: calc(2em + 0.390625vw);
+    width: calc(2em + 0.390625vw);
+    color: whitesmoke;
+    background-color: rgb(98, 98, 248);
+    text-shadow: 1px 1px 0 #444;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+/* #Info:hover{
+    background-color: rgb(79, 79, 248);
+    border-radius: 6px;
+    animation: wiggle 2s linear;  
+} */
+#Year{
+    height: 30vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    filter: brightness(1);
+    text-shadow:-5px 10px 10px rgba(141, 141, 141, 0.603)  
+}
+
+#ArrDate{
+    height: 70vh;
+    width: 100vw;
+    grid-template-columns: 10vw 80vw 10vw;
+}
+#Dates{
+    margin-top: 3px;
+    gap: 0.2px;
+}
+.datesCol{
+    grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+}
+.childnode{
+    border: none;
+    background: none;
+}
+
+button:hover{
+    /* color: aquamarine; */
+    color: rgb(255, 147, 255);
+    text-shadow: 2px 2px 2px #ffff00;
+    font-size: calc(1.05em + 0.390625vw);
+    transition:text-shadow 0.2s ease;  
+    animation: wiggle 2s linear;  
+    /* text-shadow:-4px 5px 8px rgb(145, 120, 255);    */
+
+}
+button:active{
+    text-shadow: 2px 2px #a0f65a;
+    
+}
+
+.hovereff:hover{
+    color: rgb(127, 157, 255);
+    text-shadow: 0.5px 0.5px #fefefe;
+}
+
+body.nojQuery #Info:hover {
+    background-color: rgb(79, 79, 248);
+    border-radius: 6px;
+    animation: wiggle 2s linear;  
+}
+
+/* Animations */
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+
+/* Styles for task template */
+/* h1 {
+	background: #2980b9;
+	color: white;
+	margin: 0;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+h1 i {
+	float: right;
+	cursor: pointer;
+}
+
+#container {
+	width: 360px;
+	margin: 100px auto;
+	box-shadow: 0 0 3px rgba(0,0,0,0.5);
+	background: #f7f7f7;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#container li {
+	cursor: pointer;
+	background: white;
+	height: 40px;
+	line-height: 40px;
+	color: #666;
+}
+
+#container li:nth-child(2n) {
+	background: #f7f7f7;
+}
+
+.completed {
+	text-decoration: line-through;
+	color: gray;
+}
+
+input {
+	font-size: 18px;
+	background-color: #f7f7f7;
+	width: 100%;
+	padding: 13px 13px 13px 20px;
+	box-sizing: border-box;
+	color: #2980b9;
+	border: 3px solid rgba(0,0,0,0);
+	
+}
+
+.slide {
+	display: none;
+}
+
+input:focus{
+	background: white;
+	outline: none;
+	border: 3px solid #2980b9;
+}
+
+li span {
+	background: #e74c3c;
+	color: white;
+	height: 40px;
+	display: inline-block;
+	margin-right: 20px;
+	width: 0;
+	transition: all .5s;
+	text-align: center;
+	opacity: 0;
+}
+
+li:hover span {
+	width: 40px;
+	opacity: 1;
+} */
+
+
+.container{
+    height: 100%;
+    width: 100%;
+    /* border: 1px dotted mediumaquamarine; */
+    grid-template-columns:50%;
+    /* grid-template-rows: 5% 95%; */
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+}
+.container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+ul{
+    padding: 0;
+    display: grid;
+    /* justify-content: center; */
+    align-items: center;
+}
+li{
+    max-width: 80%;
+    overflow-wrap: break-word;
+}
+#inputbox{
+    padding-left: 5px;
+    color: rgb(255, 147, 255);
+    text-shadow: 2px 2px 2px #ffff00;   
+}
+#inBox{
+    display: block;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    /* border-bottom: 1px solid red; */
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+
+
+.backbtnstyle{
+    position: absolute;
+    z-index: 4;
+    margin: 5px;
+    margin-top: 31vh;
+    margin-right: 2vw;
+    margin-left: 96vw;
+    height: calc(1.5em + 0.390625vw);
+    width: calc(1.5em + 0.390625vw);
+    color: whitesmoke;
+    background-color: rgb(248, 98, 98);
+    text-shadow: 1px 1px 0 #444;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.backbtnstyle:hover{
+    background-color: rgb(246, 31, 31);
+}
+
+loader {
+    z-index: 10;
+    top:50%;
+    left:50%;
+    border-radius:25%;
+    width:50px;
+    height:50px;
+    background:rgb(139, 231, 11);
+    display:block;
+    transition:all 1s ease;
+    position:absolute;
+  }
+  degree {
+    border-radius:25%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:50px;
+    height:50px;
+    background:rgb(102, 195, 66);
+    display:block;
+    transition:all 1s ease;
+    transform: rotate(45deg);
+  }
+  .spin {
+    top: calc(50% - 6px);
+    left:calc(50% - 6px);
+    transform: rotate(180deg);
+    height:25px;
+    width:25px;
+  }
+  .degree-spin {
+    left:calc(50% - 12px);
+    top:calc(50% - 12px);
+    width:1px;
+    height:1px;
+    transform:scale(0.1);
+  }
